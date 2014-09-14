@@ -1,0 +1,57 @@
+.page {
+	position: absolute;
+	height: 10.5cm;
+	width:  7.425cm;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.page.six, .page.seven, .page.eight {
+	transform: rotate(180deg);
+}
+
+.page.three, .page.four, .page.seven, .page.eight {
+	border-top-style: dashed;
+}
+
+.page.one {
+	top: 0;
+	left: 0;
+}
+
+.page.two {
+	top: 10.5cm;
+	left: 0;
+}
+
+.page.three {
+	top: 10.5cm;
+	left: 7.425cm;
+}
+
+.page.four {
+	top: 10.5cm;
+	left: 14.85cm;
+}
+
+.page.five {
+	top: 10.5cm;
+	left: 22.275cm;
+}
+
+.page.six {
+	top: 0;
+	left: 22.275cm;
+}
+
+.page.seven {
+	top: 0;
+	left: 14.85cm;
+}
+
+.page.eight {
+	top: 0;
+	left: 7.425cm;
+}
+
