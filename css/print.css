@@ -11,10 +11,9 @@
 	position: absolute;
 	height: 50%;
 	width:  25%;
-	border: 1px solid #ccc;
+	border: 1px solid #cfd8dc;
 	box-sizing: border-box;
 	overflow: hidden;
-	margin: -1px;
 }
 
 .little-book > section:after {
@@ -23,6 +22,7 @@
 	font-size: 0.8em;
 	position: absolute;
 	bottom: 0;
+	text-align: center;
 	left: 50%;
 	width: 1em;
 	margin-left: -0.5em;
@@ -40,45 +40,60 @@
 }
 
 .little-book > :nth-child(1),
-.little-book > :nth-child(2),
+.little-book > :nth-child(2) {
+	border-bottom-style: dotted;
+	border-bottom-width: 2px;
+}
 .little-book > :nth-child(5),
 .little-book > :nth-child(6) {
-	border-bottom-style: dotted;
+	border-bottom-style: none;
 }
 
 .little-book > :nth-child(1) {
 	top: 0;
 	left: 25%;
+	margin-left: -1px;
 }
 
 .little-book > :nth-child(2) {
 	top: 0;
 	left: 50%;
+	margin-left: -2px;
 }
 
 .little-book > :nth-child(3) {
 	top: 0;
 	left: 75%;
+	margin-left: -3px;
 }
 
 .little-book > :nth-child(4) {
 	top: 50%;
 	left: 75%;
+	margin-left: -3px;
+	margin-top: -1px;
 }
 
 .little-book > :nth-child(5) {
 	top: 50%;
 	left: 50%;
+	margin-left: -2px;
+	margin-top: -1px;
+
 }
 
 .little-book > :nth-child(6) {
 	top: 50%;
 	left: 25%;
+	margin-left: -1px;
+	margin-top: -1px;
+
 }
 
 .little-book > :nth-child(7) {
 	top: 50%;
 	left: 0;
+	margin-top: -1px;
 }
 
 .little-book > :nth-child(8) {

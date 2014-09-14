@@ -4,10 +4,9 @@ layout: base
 
 <main class="little-book">
 	{% for leaf in site.leaves %}
-	<section>
-		{% if leaf.title %}
-		<h1>{{ leaf.title }}</h1>
-		{% endif %}
+	<section{% if leaf.class %} class="{{ leaf.class }}"{% endif %}>
+		{% if leaf.title %}<h1>{{ leaf.title }}</h1>{% endif %}
+		{% if leaf.subtitle %}<h2>{{ leaf.subtitle }}</h2>{% endif %}
 		<article>
 			{{ leaf.output }}
 		</article>
