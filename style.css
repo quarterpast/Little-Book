@@ -1,10 +1,23 @@
-.little-book section {
+.little-book {
+	counter-reset: page;
+}
+
+.little-book > section {
 	position: absolute;
 	height: 10.5cm;
 	width:  7.425cm;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
 	padding: 10px;
+}
+
+.little-book > section:after {
+	counter-increment: page;
+	content: counter(page);
+}
+
+.little-book > :first-child:after {
+	content: '';
 }
 
 .little-book > :nth-child(6),
