@@ -73,6 +73,10 @@ code {
 	z-index: 9;
 }
 
+.little-book .photo a:after {
+	display: none;
+}
+
 ul, ol {
 	padding-left: 2em;
 }

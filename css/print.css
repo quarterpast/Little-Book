@@ -1,5 +1,4 @@
 .little-book {
-	counter-reset: -little-book-page;
 	width: 29.7cm;
 	height: 21cm;
 	position: absolute;
@@ -8,28 +7,19 @@
 }
 
 .little-book > section {
-	position: absolute;
 	height: 50%;
 	width:  25%;
 	border: 1px solid #cfd8dc;
-	box-sizing: border-box;
-	overflow: hidden;
 }
 
-.little-book > section:after {
-	counter-increment: -little-book-page;
-	content: counter(-little-book-page);
-	font-size: 0.8em;
-	position: absolute;
-	bottom: 0;
-	text-align: center;
-	left: 50%;
-	width: 1em;
-	margin-left: -0.5em;
+.little-book a:link {
+	color: inherit !important;
 }
 
-.little-book > :first-child:after {
-	content: '';
+.little-book a:link:after {
+	content: ' (' attr(href) ')';
+	word-wrap: break-word;
+	opacity: 0.54;
 }
 
 .little-book > :nth-child(4),

@@ -3,10 +3,41 @@
 <head>
 <meta charset="utf-8">
 <title>Little Book</title>
-<link rel="stylesheet" href="css/print.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/screen.css" media="only screen">
+<link rel="stylesheet" href="css/print.css" media="only print">
 <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
 {{ content }}
 </body>
+<script>
+var $ = document.querySelector.bind(document);
+
+$('.little-book section:nth-child(odd)').addEventListener('click', function(ev) {
+	var page = +$('.little-book').getAttribute('data-page') || 1;
+	navigate(page + 1);
+});
+
+$('.little-book section:nth-child(even)').addEventListener('click', function(ev) {
+	var page = +$('.little-book').getAttribute('data-page') || 1;
+	navigate(page - 1);
+});
+
+
+window.addEventListener('hashchange', hashChange);
+hashChange();
+
+function hashChange() {
+	changePage(+location.hash.substr(1) || 1);
+}
+
+function changePage(page) {
+	$('.little-book').setAttribute('data-page', page);
+}
+
+function navigate(page) {
+	location.hash = '#' + page
+}
+</script>
 </html>

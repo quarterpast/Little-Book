@@ -1,0 +1,26 @@
+.little-book {
+  counter-reset: -little-book-page;
+}
+
+.little-book > section:after {
+  counter-increment: -little-book-page;
+  content: counter(-little-book-page);
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  left: 50%;
+  width: 1em;
+  margin-left: -0.5em;
+}
+
+.little-book > :first-child:after {
+  display: none;
+}
+
+.little-book > section {
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
