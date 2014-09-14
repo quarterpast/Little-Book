@@ -13,6 +13,7 @@
 	width:  25%;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .little-book > section:after {
