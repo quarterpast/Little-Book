@@ -25,9 +25,7 @@ body {
 }
 
 $start-angle: -10deg;
-$start-step: 1deg;
-$fan-angle: $start-angle - 9deg;
-$fan-step: 3deg;
+$start-step: 2deg;
 
 .little-book > section {
   width:  7.425cm;
@@ -41,7 +39,7 @@ $fan-step: 3deg;
   background: #efebe9;
   cursor: pointer;
 
-  transition: transform 1s, box-shadow 1s, z-index 1s linear;
+  transition: transform 1s, box-shadow 1s, z-index 1s;
   transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
   transform-origin: 0 50%;
   backface-visibility: hidden;
@@ -74,10 +72,8 @@ $fan-step: 3deg;
   @include fan($start-angle, $start-step);
 
   &:hover {
-    @include fan($fan-angle, $fan-step);
-    &, ~ section {
-      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    }
+    transform: rotateY($start-angle - 3deg);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
   }
 }
 
