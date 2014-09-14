@@ -14,11 +14,18 @@
 	border: 1px solid #ccc;
 	box-sizing: border-box;
 	overflow: hidden;
+	margin: -1px;
 }
 
 .little-book > section:after {
 	counter-increment: -little-book-page;
 	content: counter(-little-book-page);
+	font-size: 0.8em;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 1em;
+	margin-left: -0.5em;
 }
 
 .little-book > :first-child:after {
