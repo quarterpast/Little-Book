@@ -1,5 +1,5 @@
 .little-book {
-	counter-reset: page;
+	counter-reset: -little-book-page;
 }
 
 .little-book > section {
@@ -12,8 +12,8 @@
 }
 
 .little-book > section:after {
-	counter-increment: page;
-	content: counter(page);
+	counter-increment: -little-book-page;
+	content: counter(-little-book-page);
 }
 
 .little-book > :first-child:after {
