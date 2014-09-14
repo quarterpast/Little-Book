@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,14 +9,16 @@
 </head>
 <body>
 <main class="little-book">
-	<section></section>
-	<section></section>
-	<section></section>
-	<section></section>
-	<section></section>
-	<section></section>
-	<section></section>
-	<section></section>
+	{% for leaf in site.leaves %}
+	<section>
+		{% if leaf.title %}
+		<h1>{{ leaf.title }}</h1>
+		{% endif %}
+		<article>
+			{{ leaf.output }}
+		</article>
+	</section>
+	{% endfor %}
 </main>
 </body>
 </html>
