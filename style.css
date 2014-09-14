@@ -1,4 +1,4 @@
-.page {
+.little-book section {
 	position: absolute;
 	height: 10.5cm;
 	width:  7.425cm;
@@ -7,50 +7,55 @@
 	padding: 10px;
 }
 
-.page.six, .page.seven, .page.eight {
+.little-book > :nth-child(6),
+.little-book > :nth-child(7),
+.little-book > :nth-child(8) {
 	transform: rotate(180deg);
 }
 
-.page.three, .page.four, .page.seven, .page.eight {
+.little-book > :nth-child(3),
+.little-book > :nth-child(4),
+.little-book > :nth-child(7),
+.little-book > :nth-child(8) {
 	border-top-style: dashed;
 }
 
-.page.one {
+.little-book > :nth-child(1) {
 	top: 0;
 	left: 0;
 }
 
-.page.two {
+.little-book > :nth-child(2) {
 	top: 10.5cm;
 	left: 0;
 }
 
-.page.three {
+.little-book > :nth-child(3) {
 	top: 10.5cm;
 	left: 7.425cm;
 }
 
-.page.four {
+.little-book > :nth-child(4) {
 	top: 10.5cm;
 	left: 14.85cm;
 }
 
-.page.five {
+.little-book > :nth-child(5) {
 	top: 10.5cm;
 	left: 22.275cm;
 }
 
-.page.six {
+.little-book > :nth-child(6) {
 	top: 0;
 	left: 22.275cm;
 }
 
-.page.seven {
+.little-book > :nth-child(7) {
 	top: 0;
 	left: 14.85cm;
 }
 
-.page.eight {
+.little-book > :nth-child(8) {
 	top: 0;
 	left: 7.425cm;
 }
