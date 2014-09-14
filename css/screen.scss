@@ -9,13 +9,14 @@ body {
   height: 100vh;
   width: 100vw;
 
-  transition: transform 1s, perspective-origin 1s;
+  transition: transform 1s, perspective-origin 1s, perspective 1s;
   perspective: 2000px;
   perspective-origin: 50% 50%;
   transform: translateX(3.1725cm);
 
   &[data-page="1"] {
     perspective-origin: 100% 50%;
+    perspective: 1000px;
     transform: none;
   }
 
