@@ -15,11 +15,11 @@
 var $ = document.querySelector.bind(document);
 
 function closest(selector, el) {
-	while(el = el.parentNode) {
-		if(el.matches(selector)) {
+	do {
+		if(el.matches && el.matches(selector)) {
 			return el;
 		}
-	}
+	} while(el = el.parentNode)
 }
 
 $('.little-book').addEventListener('click', function(ev) {
