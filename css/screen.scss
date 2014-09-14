@@ -18,6 +18,10 @@ body {
     perspective-origin: 100% 50%;
     transform: none;
   }
+
+  &[data-page="5"] {
+    transform: translateX(7.425cm);
+  }
 }
 
 $start-angle: -10deg;
@@ -37,13 +41,13 @@ $fan-step: 3deg;
   background: #efebe9;
   cursor: pointer;
 
-  transition: transform 1s;
+  transition: transform 1s, box-shadow 1s, z-index 1s linear;
   transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
   transform-origin: 0 50%;
   backface-visibility: hidden;
 
-  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-  border-right: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.07);
 
   transform: rotateY($start-angle);
 }
@@ -60,8 +64,8 @@ $fan-step: 3deg;
       $even: (($i + 1) % 2);
       transform:
         rotateX(180deg * $even) rotateZ(180deg * $even)
-        translateX(-100% * $even)
-        rotateY($start + floor(($i - 1) / 2) * $step);
+        rotateY($start + floor(($i - 1) / 2) * $step)
+        translateX(-100% * $even);
     }
   }
 }
@@ -71,17 +75,22 @@ $fan-step: 3deg;
 
   &:hover {
     @include fan($fan-angle, $fan-step);
+    &, ~ section {
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
   }
 }
 
-@for $page from 2 through 8 {
-  @for $i from 1 through $page {
-    .little-book[data-page="#{$page}"] > :nth-child(#{$i}) {
+@for $p from 2 through 5 {
+  @for $i from 1 through ($p - 1) * 2 {
+    .little-book[data-page="#{$p}"] > :nth-child(#{$i}) {
       $even: (($i + 1) % 2);
       transform: 
         rotateX(180deg * $even) rotateZ(180deg * $even)
-        translateX(-100% * $even)
-        rotateY(-180deg - $start-angle);
+        rotateY(-180deg - $start-angle)
+        translateX(-100% * $even);
+
+      z-index: 12 + $i;
     }
   }
 }

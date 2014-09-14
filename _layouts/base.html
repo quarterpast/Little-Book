@@ -14,16 +14,24 @@
 <script>
 var $ = document.querySelector.bind(document);
 
-$('.little-book section:nth-child(odd)').addEventListener('click', function(ev) {
-	var page = +$('.little-book').getAttribute('data-page') || 1;
-	navigate(page + 1);
-});
+function closest(selector, el) {
+	while(el = el.parentNode) {
+		if(el.matches(selector)) {
+			return el;
+		}
+	}
+}
 
-$('.little-book section:nth-child(even)').addEventListener('click', function(ev) {
+$('.little-book').addEventListener('click', function(ev) {
+	var target = closest('.little-book > section', ev.target);
 	var page = +$('.little-book').getAttribute('data-page') || 1;
-	navigate(page - 1);
+	var even = target.matches(':nth-child(even)');
+	var next = page + (even ? -1 : 1);
+	
+	if(1 <= next && next <= 5) {
+		navigate(next);
+	}
 });
-
 
 window.addEventListener('hashchange', hashChange);
 hashChange();
