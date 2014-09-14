@@ -2,7 +2,8 @@
 ---
 
 body {
-  background-image: -webkit-linear-gradient(top, rgb(96, 108, 136), rgb(63, 76, 107))
+  background-image: -webkit-linear-gradient(top, rgb(96, 108, 136), rgb(63, 76, 107));
+  overflow: hidden;
 }
 
 .little-book {
@@ -26,7 +27,7 @@ body {
 }
 
 $start-angle: -10deg;
-$start-step: 2deg;
+$start-step: 1.5deg;
 
 .little-book > section {
   width:  7.425cm;

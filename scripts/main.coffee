@@ -13,23 +13,30 @@ currentPage = ->
   parseInt($('.little-book').getAttribute 'data-page') or 1
 
 hashChange = ->
-  changePage(parseInt(location.hash.substr(1)) or 1)
+  page = parseInt(location.hash.substr(1)) or 1
+
+  if 1 <= page <= 5
+    changePage page
 
 changePage = (page)->
   $('.little-book').setAttribute 'data-page', page
 
 navigate = (page)->
-  location.hash = '#' + page
+  if 1 <= page <= 5
+    location.hash = '#' + page
 
 $ '.little-book'
   .addEventListener 'click', (ev)->
     target = closest '.little-book > section', ev.target
-    page   = parseInt($('.little-book').getAttribute 'data-page') or 1
-    even   = target.matches ':nth-child(even)'
-    next   = currentPage() + if even then -1 else 1
+    if target
+      navigate currentPage() + if target.matches ':nth-child(even)' then -1 else 1
 
-    if 1 <= next <= 5
-      navigate next
+document.addEventListener 'keydown', (ev)->
+  switch ev.which
+    when 37, 74 # left, j
+      navigate currentPage() - 1
+    when 39, 75 # right, k
+      navigate currentPage() + 1
 
 window.addEventListener 'hashchange', hashChange
 hashChange()
