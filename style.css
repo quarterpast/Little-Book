@@ -1,11 +1,16 @@
 .little-book {
 	counter-reset: -little-book-page;
+	width: 29.7cm;
+	height: 21cm;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .little-book > section {
 	position: absolute;
-	height: 10.5cm;
-	width:  7.425cm;
+	height: 50%;
+	width:  25%;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
 	padding: 10px;
@@ -20,56 +25,57 @@
 	content: '';
 }
 
+.little-book > :nth-child(4),
+.little-book > :nth-child(5),
 .little-book > :nth-child(6),
-.little-book > :nth-child(7),
-.little-book > :nth-child(8) {
+.little-book > :nth-child(7) {
 	transform: rotate(180deg);
 }
 
-.little-book > :nth-child(3),
-.little-book > :nth-child(4),
-.little-book > :nth-child(7),
-.little-book > :nth-child(8) {
-	border-top-style: dashed;
+.little-book > :nth-child(1),
+.little-book > :nth-child(2),
+.little-book > :nth-child(5),
+.little-book > :nth-child(6) {
+	border-bottom-style: dotted;
 }
 
 .little-book > :nth-child(1) {
 	top: 0;
-	left: 0;
+	left: 25%;
 }
 
 .little-book > :nth-child(2) {
-	top: 10.5cm;
-	left: 0;
+	top: 0;
+	left: 50%;
 }
 
 .little-book > :nth-child(3) {
-	top: 10.5cm;
-	left: 7.425cm;
+	top: 0;
+	left: 75%;
 }
 
 .little-book > :nth-child(4) {
-	top: 10.5cm;
-	left: 14.85cm;
+	top: 50%;
+	left: 75%;
 }
 
 .little-book > :nth-child(5) {
-	top: 10.5cm;
-	left: 22.275cm;
+	top: 50%;
+	left: 50%;
 }
 
 .little-book > :nth-child(6) {
-	top: 0;
-	left: 22.275cm;
+	top: 50%;
+	left: 25%;
 }
 
 .little-book > :nth-child(7) {
-	top: 0;
-	left: 14.85cm;
+	top: 50%;
+	left: 0;
 }
 
 .little-book > :nth-child(8) {
 	top: 0;
-	left: 7.425cm;
+	left: 0;
 }
 
